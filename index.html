@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Clone Front-End</title>
+    <!-- <link rel="stylesheet" href="input.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+     <!-- Navbar     -->
+
+    <nav class="flex fixed bg-white w-screen top-0 z-10">
+        <div class="nav-left flex items-center basis-1/4">
+            <img src="assets/hamburger.png" alt="" class="w-[20px] mx-6 my-4" id="menu-icon">
+            <img src="assets/logo.png" alt="" class="w-[30px] ml-2">
+            <p class="font-bold mx-1">YouTube <sup class="font-light">BD</sup></p>
+        </div>
+
+        <div class="nav-center flex items-center basis-1/2">
+            <div class="border w-[40vw] rounded-l-3xl h-10 ml-12">
+                <input type="text" class="outline-none w-full h-full ml-6" placeholder="Search">
+            </div>
+
+            <div class="border bg-slate-50 h-10 m-2 -ml-8 rounded-r-3xl w-16 ">
+                <img src="assets/search.png" alt="" 
+                class="w-[25px] m-1 mx-4">
+            </div>
+
+            <div class="rounded-full h-10 w-10 bg-slate-100">
+                <img src="assets/mic.png" alt="" class="w-[20px] m-auto mt-2">
+            </div>
+        </div>
+
+
+        <div class="nav-right flex items-center justify-end basis-1/4 mr-6">
+            <img src="assets/video.png" alt="" class="w-[25px] mx-4">
+            <img src="assets/notification.png" alt="" class="w-[25px] mx-4">
+            <img src="assets/channels4_profile.jpg" alt="" class="w-[25px] mx-4 rounded-full" >
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+
+    <div class="w-[15%] fixed h-screen bg-white z-10" id="sidebar">
+        <div class="flex items-center rounded-xl  mx-2 h-10 bg-slate-100">
+            <img src="assets/home.png" alt="" class="w-[20px] mx-4">
+            <p class="ml-2">Home</p>
+        </div>
+
+        <div class="flex items-center rounded-xl mx-2 h-10">
+            <img src="assets/shorts-removebg-preview.png" alt="" class="w-[30px] mx-4">
+            <p class="">Shorts</p>
+        </div>
+
+        <div class="flex items-center rounded-xl mx-2 h-10">
+            <img src="assets/subcription.png" alt="" class="w-[30px] mx-4">
+            <p class="">Subscription</p>
+        </div>
+
+        <hr class="w-[80%] ml-[10%]">
+
+        <div class="font-semibold mt-4 mx-7">You ></div>
+
+        <div class="flex items-center rounded-xl mx-4 mt-4 h-10">
+            <img src="assets/your_channel.png" alt="" class="w-[20px] mx-4">
+            <p class="font-light">Your Channel</p>
+        </div>
+
+        <div class="flex items-center rounded-xl mx-4 h-10">
+            <img src="assets/history.png" alt="" class="w-[20px] mx-4">
+            <p class="font-light">History</p>
+        </div>
+        
+        <div class="flex items-center rounded-xl mx-4 h-10">
+            <img src="assets/playlist.png" alt="" class="w-[20px] mx-4">
+            <p class="font-light">Playlist</p>
+        </div>
+
+        <div class="flex items-center rounded-xl mx-4 h-10">
+            <img src="assets/your videos.png" alt="" class="w-[20px] mx-4">
+            <p class="font-light">Your Videos</p>
+        </div>
+
+        <div class="flex items-center rounded-xl mx-4 h-10">
+            <img src="assets/clock.png" alt="" class="w-[20px] mx-4">
+            <p class="font-light">Watch Later</p>
+        </div>
+
+        <div class="flex items-center rounded-xl mx-4 h-10 mb-4">
+            <img src="assets/like.png" alt="" class="w-[20px] mx-4">
+            <p class="font-light">Liked Videos</p>
+        </div>
+
+        <hr class="w-[80%] ml-[10%]">
+
+        <div class="font-semibold mt-4 mx-7">Subscriptions</div>
+
+        <div class="flex items-center rounded-xl mx-3 mt-4 h-10">
+            <img src="assets/channels4_profile(1).jpg" alt="" class="w-[25px] ml-4 mr-4 rounded-full">
+            <p class="font-light">GreatStack</p>
+        </div>
+
+        <div class="flex items-center rounded-xl mx-3 mt-4 h-10">
+            <img src="assets/channels4_profile(2).jpg" alt="" class="w-[25px] ml-4 mr-4 rounded-full">
+            <p class="font-light">React JS developers</p>
+        </div>
+
+        <div class="flex items-center rounded-xl mx-3 mt-4 h-10">
+            <img src="assets/channels4_profile(3).jpg" alt="" class="w-[25px] ml-4 mr-4 rounded-full">
+            <p class="font-light">Content Creaters</p>
+        </div>
+    </div>
+
+    <!-- Mini Sidebar -->
+    <div class="w-[7%] fixed h-screen bg-white z-10 hidden" id="mini-sidebar">
+        <div class="flex flex-col items-center h-20 pt-4 px-2 rounded-xl hover:bg-slate-200">
+            <img src="assets/home.png" class="w-[20px]" alt="">
+            <p class="text-xs mt-2">Home</p>
+        </div>
+
+        <div class="flex flex-col items-center h-20 pt-4 px-2 rounded-xl hover:bg-slate-200">
+            <img src="assets/shorts-removebg-preview.png" class="w-[30px]" alt="">
+            <p class="text-xs mt-2">Shorts</p>
+        </div>
+        <div class="flex flex-col items-center h-20 pt-4 px-2 rounded-xl hover:bg-slate-200">
+            <img src="assets/subcription.png" class="w-[30px]" alt="">
+            <p class="text-xs mt-2">Subscriptions</p>
+        </div>
+        <div class="flex flex-col items-center h-20 pt-4 px-2 rounded-xl hover:bg-slate-200">
+            <img src="assets/your_channel.png" class="w-[25px]" alt="">
+            <p class="text-xs mt-2">You</p>
+        </div>
+
+    </div>
+
+    <div class="ml-[15%] mt-20 flex items-center">
+        <div class="border mx-1  bg-slate-100 px-3 rounded-xl font-semibold text-sm h-9 py-1.5">Tune Your Feed</div>
+        <div class="border mx-1  bg-black text-white px-3 rounded-xl font-semibold text-sm h-9 py-1.5">All</div>
+        <div class="border mx-1  bg-slate-100 px-3 rounded-xl font-semibold text-sm h-9 py-1.5">Security Hacker</div>
+        <div class="border mx-1  bg-slate-100 px-3 rounded-xl font-semibold text-sm h-9 py-1.5">Source Code</div>
+        <div class="border mx-1  bg-slate-100 px-3 rounded-xl font-semibold text-sm h-9 py-1.5">Skills</div>
+    </div>
+
+
+
+    <!-- Content -->
+    <main class="ml-[15%] min-h-screen grid grid-cols-3 " id="content">
+        
+        <a href="video-section.html" class="mb-10">
+            <div class="m-2 relative">
+                <img src="assets/thumbnail1.jpg" class="rounded-xl" alt="">
+                <div class="mt-2 flex items-start">
+                    <img src="assets/channels4_profile(5).jpg" class="w-[35px] rounded-full" alt="">
+                    <div class="mx-3">
+                        <p class=" font-semibold">History's Most Evil Doctor</p>
+                        <p class="text-slate-700 text-sm">fern</p>
+                        <p class="text-slate-700 text-sm">900k Views &bull; 6 days ago</p>
+                    </div>
+                    <div class="absolute h-10 right-2">
+                        <p class="font-extrabold text-lg">⋮</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="video-section.html" class="mb-10">
+            <div class="m-2 relative">
+                <img src="assets/thumbnail2.jpg" class="rounded-xl" alt="">
+                <div class="mt-2 flex items-start">
+                    <img src="assets/channels4_profile(6).jpg" class="w-[35px] rounded-full" alt="">
+                    <div class="mx-3">
+                        <p class=" font-semibold">History's Most Evil Doctor</p>
+                        <p class="text-slate-700 text-sm">fern</p>
+                        <p class="text-slate-700 text-sm">900k Views &bull; 6 days ago</p>
+                    </div>
+                    <div class="absolute h-10 right-2">
+                        <p class="font-extrabold text-lg">⋮</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+
+        <a href="video-section.html" class="mb-10">
+            <div class="m-2 relative">
+                <img src="assets/thumbnail3.jpg" class="rounded-xl" alt="">
+                <div class="mt-2 flex items-start">
+                    <img src="assets/channels4_profile(4).jpg" class="w-[35px] rounded-full" alt="">
+                    <div class="mx-3">
+                        <p class=" font-semibold">History's Most Evil Doctor</p>
+                        <p class="text-slate-700 text-sm">fern</p>
+                        <p class="text-slate-700 text-sm">900k Views &bull; 6 days ago</p>
+                    </div>
+                    <div class="absolute h-10 right-2">
+                        <p class="font-extrabold text-lg">⋮</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="video-section.html" class="mb-10">
+            <div class="m-2 relative">
+                <img src="assets/thumbnail4.jpg" class="rounded-xl" alt="">
+                <div class="mt-2 flex items-start">
+                    <img src="assets/channels4_profile(3).jpg" class="w-[35px] rounded-full" alt="">
+                    <div class="mx-3">
+                        <p class=" font-semibold">History's Most Evil Doctor</p>
+                        <p class="text-slate-700 text-sm">fern</p>
+                        <p class="text-slate-700 text-sm">900k Views &bull; 6 days ago</p>
+                    </div>
+                    <div class="absolute h-10 right-2">
+                        <p class="font-extrabold text-lg">⋮</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="video-section.html" class="mb-10">
+            <div class="m-2 relative">
+                <img src="assets/thumbnail6.jpg" class="rounded-xl" alt="">
+                <div class="mt-2 flex items-start">
+                    <img src="assets/channels4_profile(7).jpg" class="w-[35px] rounded-full" alt="">
+                    <div class="mx-3">
+                        <p class=" font-semibold">History's Most Evil Doctor</p>
+                        <p class="text-slate-700 text-sm">fern</p>
+                        <p class="text-slate-700 text-sm">900k Views &bull; 6 days ago</p>
+                    </div>
+                    <div class="absolute h-10 right-2">
+                        <p class="font-extrabold text-lg">⋮</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="video-section.html" class="mb-10">
+            <div class="m-2 relative">
+                <img src="assets/thumbnail7.jpg" class="rounded-xl" alt="">
+                <div class="mt-2 flex items-start">
+                    <img src="assets/channels4_profile(1).jpg" class="w-[35px] rounded-full" alt="">
+                    <div class="mx-3">
+                        <p class=" font-semibold">History's Most Evil Doctor</p>
+                        <p class="text-slate-700 text-sm">fern</p>
+                        <p class="text-slate-700 text-sm">900k Views &bull; 6 days ago</p>
+                    </div>
+                    <div class="absolute h-10 right-2">
+                        <p class="font-extrabold text-lg">⋮</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="video-section.html" class="mb-10">
+            <div class="m-2 relative">
+                <img src="assets/thumbnail8.jpg" class="rounded-xl" alt="">
+                <div class="mt-2 flex items-start">
+                    <img src="assets/channels4_profile(5).jpg" class="w-[35px] rounded-full" alt="">
+                    <div class="mx-3">
+                        <p class=" font-semibold">History's Most Evil Doctor</p>
+                        <p class="text-slate-700 text-sm">fern</p>
+                        <p class="text-slate-700 text-sm">900k Views &bull; 6 days ago</p>
+                    </div>
+                    <div class="absolute h-10 right-2">
+                        <p class="font-extrabold text-lg">⋮</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="video-section.html" class="mb-10">
+            <div class="m-2 relative">
+                <img src="assets/thumbnail9.jpg" class="rounded-xl" alt="">
+                <div class="mt-2 flex items-start">
+                    <img src="assets/channels4_profile(5).jpg" class="w-[35px] rounded-full" alt="">
+                    <div class="mx-3">
+                        <p class=" font-semibold">History's Most Evil Doctor</p>
+                        <p class="text-slate-700 text-sm">fern</p>
+                        <p class="text-slate-700 text-sm">900k Views &bull; 6 days ago</p>
+                    </div>
+                    <div class="absolute h-10 right-2">
+                        <p class="font-extrabold text-lg">⋮</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="video-section.html" class="mb-10">
+            <div class="m-2 relative">
+                <img src="assets/thumbnail1.jpg" class="rounded-xl" alt="">
+                <div class="mt-2 flex items-start">
+                    <img src="assets/channels4_profile(5).jpg" class="w-[35px] rounded-full" alt="">
+                    <div class="mx-3">
+                        <p class=" font-semibold">History's Most Evil Doctor</p>
+                        <p class="text-slate-700 text-sm">fern</p>
+                        <p class="text-slate-700 text-sm">900k Views &bull; 6 days ago</p>
+                    </div>
+                    <div class="absolute h-10 right-2">
+                        <p class="font-extrabold text-lg">⋮</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        
+    </main>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
